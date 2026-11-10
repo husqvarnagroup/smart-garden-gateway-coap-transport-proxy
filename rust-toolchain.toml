@@ -1,0 +1,9 @@
+# SPDX-FileCopyrightText: 2026 GARDENA GmbH
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+[toolchain]
+# compiler version used by currently used Yocto toolchain
+channel = "1.75.0"
+profile = "minimal"
+components = ["clippy", "rustfmt"]
