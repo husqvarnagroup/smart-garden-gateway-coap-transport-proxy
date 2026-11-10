@@ -81,7 +81,7 @@ impl Server {
 
         // The coap library is dumb and does not filter duplicates :-( so we have to do it
         // This is a simple solution. I wanted to use some fancy crate like quick_cache, but our
-        // rust compiler ist too old :-( With quick_cache I could have used get_value_or_guard_async
+        // rust compiler is too old :-( With quick_cache I could have used get_value_or_guard_async
         // which would have solved a lot of my problems.
         let key = (request.source, request.message.header.message_id);
 

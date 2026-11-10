@@ -137,7 +137,7 @@ class ClientSite(resource.Resource, resource.PathCapable):
         assert request.code == aiocoap.Code.POST
         if self.handler is not None:
             await self.handler(request)
-        # client always returns ok unless overriden
+        # client always returns ok unless overridden
         return aiocoap.Message(code=self.return_code)
 
 
@@ -450,7 +450,7 @@ async def test_connection_closed(server_under_test, lemonbeat_encryption_flag, s
 
 @pytest.mark.asyncio
 @pytest.mark.parametrize("server_args", [{}, {"enable_tls": True, "verify_certificate": False}])
-async def test_client_does_not_accept_connnection(server_under_test, lemonbeat_encryption_flag, server_args):
+async def test_client_does_not_accept_connection(server_under_test, lemonbeat_encryption_flag, server_args):
     enable_tls = server_args.get('enable_tls', False)
     verify_certificate = server_args.get('verify_certificate')
     if enable_tls and verify_certificate is None:
@@ -494,7 +494,7 @@ async def test_client_does_not_accept_connnection(server_under_test, lemonbeat_e
 
 @pytest.mark.asyncio
 @pytest.mark.parametrize("server_args", [{}, {"enable_tls": True, "verify_certificate": False}])
-async def test_client_forgets_connnection(server_under_test, lemonbeat_encryption_flag, server_args):
+async def test_client_forgets_connection(server_under_test, lemonbeat_encryption_flag, server_args):
     mock_reader, mock_writer, protocol, path, site, _ = await mock_server_and_connect(**server_args)
 
     site.return_code = aiocoap.Code.NOT_FOUND
