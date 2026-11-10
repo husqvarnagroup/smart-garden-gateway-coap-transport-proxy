@@ -256,7 +256,11 @@ impl Tunnel {
             });
 
             if len == 0 || self.status() != TunnelStatus::Connected {
-                tracing::info!(?client_addr, client_uri, "TCP connection closed by remote server.");
+                tracing::info!(
+                    ?client_addr,
+                    client_uri,
+                    "TCP connection closed by remote server."
+                );
                 self.close().await;
                 break;
             }
