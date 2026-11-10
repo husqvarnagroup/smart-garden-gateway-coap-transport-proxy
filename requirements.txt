@@ -1,0 +1,7 @@
+# SPDX-FileCopyrightText: 2026 GARDENA GmbH
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+aiocoap~=0.4.11
+pytest~=8.3.3
+pytest-asyncio~=0.24.0
